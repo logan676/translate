@@ -65,7 +65,7 @@ async def translate_line(translator, text, progress_info=""):
 
     try:
         # The translate(...) method returns a coroutine in googletrans==4.0.0-rc1, so we await it.
-        result = await translator.translate(text, src='zh-cn', dest='en')
+        result = translator.translate(text, src='zh-cn', dest='en')
         translated_text = result.text
     except Exception as e:
         translated_text = f"[Translation Error: {str(e)}]"
